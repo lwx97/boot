@@ -55,10 +55,10 @@ public class DeptServiceImpl implements DeptService{
 	public List<String> findAll() {
 		return new ArrayList<String>();
 	}
-//	private static String txturl = "D:\\app\\output.txt";
-	private static String txturl = "/root/opt/huangjuan/output.txt";
-//	private static String imgurl1 = "C:\\Users\\李文祥\\workspace\\boot\\src\\main\\webapp\\img\\123.png";
-	private static String imgurl1 = "/root/opt/huangjuan/boot/src/main/webapp/img/123.png";
+	private static String txturl = "D:\\app\\output.txt";
+//	private static String txturl = "/root/opt/huangjuan/output.txt";
+	private static String imgurl1 = "D:\\app\\mygit\\boot\\src\\main\\webapp\\img\\123.png";
+//	private static String imgurl1 = "/root/opt/huangjuan/boot/src/main/webapp/img/123.png";
 	@Override
 	public String reqWeibo(HttpServletRequest req) throws IOException, InterruptedException {
 		File writeName = new File(txturl);
@@ -90,12 +90,12 @@ public class DeptServiceImpl implements DeptService{
 					System.out.println("********************");
 					System.out.println(str);
 					System.out.println("********************");
-					Thread.sleep(1000);
+					Thread.sleep(200);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-			Thread.sleep(500);
+			Thread.sleep(200);
 		}
 		
 		pw.flush(); 
@@ -165,8 +165,9 @@ public class DeptServiceImpl implements DeptService{
 	//生成词云  
 	       wordCloud.build(wordFrequencyList);    
 	       String img = UUID.randomUUID().toString().replace("-", "");
-	       wordCloud.writeToFile(imgurl1);
-	       str ="img\\123.png";
+	       wordCloud.writeToFile("C:\\Users\\huangjuan\\Desktop\\boot\\src\\main\\webapp\\img\\"+img+".png");
+	       str ="img\\"+img+".png";
+	       System.out.println(str);
 	       return str;
 	}
 

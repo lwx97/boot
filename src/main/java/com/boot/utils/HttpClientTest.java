@@ -47,7 +47,7 @@ public class HttpClientTest {
 //		
 	}
 	public static Set<String> getUrl(String url){
-String post = testPost("https://m.weibo.cn/profile/info?uid=2194868354");
+String post = testPost(url);
 		HashSet<String> set = new HashSet<String>();
 		if(post!=null) {
 			System.err.println("----------------------------------------------");
